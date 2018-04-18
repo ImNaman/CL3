@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Employee details</title>
+<style>
+		th,td{
+			padding:10px;
+			border: 1px solid black
+		}
+	</style>
+</head>
+<body>
+<h3>Enter employee details</h3>
+	<form method="POST" action="/add">
+		<input type="text" name="firstname" placeholder="Enter Firstname">
+		<input type="text" name="lastname" placeholder="Enter lastname">
+		<input type="text" name="employee_dept" placeholder="Enter department">
+		<input type="text" name="employee_salary" placeholder="Enter salary">
+		<input type="submit" name="submit">
+	</form>
+	
+<h3> Employee </h3>
+	<table>
+		<thead>
+			<th>Firstname</th>
+			<th>Lastname</th>
+			<th>Department</th>
+			<th>Salary</th>
+			<th>date</th>
+		</thead>
+		<tbody>
+			{% for i in employees %}
+			<tr>
+				<td>{{i.firstname}}</td>
+					<td>{{i.lastname}}</td>
+					<td>{{i.employee_dept}}</td>
+					<td>{{i.employee_salary}}</td>
+					<td>{{i.date}}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	
+
+</body>
+</html>
